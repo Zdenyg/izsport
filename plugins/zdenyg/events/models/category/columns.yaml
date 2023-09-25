@@ -1,0 +1,6 @@
+columns:
+    category_title:
+        label: category_title
+        type: text
+        searchable: true
+        sortable: true

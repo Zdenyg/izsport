@@ -1,0 +1,10 @@
+name: Categories
+form: $/zdenyg/events/models/category/fields.yaml
+modelClass: Zdenyg\Events\Models\Category
+defaultRedirect: zdenyg/events/categories
+create:
+    redirect: 'zdenyg/events/categories/update/:id'
+    redirectClose: zdenyg/events/categories
+update:
+    redirect: zdenyg/events/categories
+    redirectClose: zdenyg/events/categories

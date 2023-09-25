@@ -1,0 +1,90 @@
+tabs:
+    fields:
+        # TAB: Úvod
+        details_section_1:
+            tab: Úvod
+            label: Nastavení stránek
+            type: section
+            comment: Zde nastavte úvodní informace...
+        website_name:
+            stretch: false
+            tab: Úvod
+            label: Název webu
+            type: text
+            default: 
+            span: storm
+            cssClass: col-md-4
+        website_description:
+            tab: Úvod
+            label: Popis webové stránky
+            type: textarea
+            default: 
+            span: storm
+            cssClass: col-md-4   
+        company_logo:
+            tab: Úvod 
+            label: Logo 
+            type: mediafinder
+            mode: image
+            imageWidth: 100
+            imageHeight: 70
+            filetypes: svg  
+            span: storm
+            cssClass: col-md-4  
+        details_section_2:
+            tab: Úvod
+            label: Texty v Hero sekci
+            type: section
+        hero_title:
+            tab: Úvod
+            label: Titulek v hero sekci
+            type: text
+            span: storm
+            cssClass: col-md-6        
+        hero_subtitle:
+            tab: Úvod
+            label: Podtitulek v hero sekci
+            type: text
+            span: storm
+            cssClass: col-md-6
+        details_section_3:
+            tab: Úvod
+            label: Texty v úvodu
+            type: section
+        introduction_title:
+            tab: Úvod
+            label: Title 
+            type: text
+            default: Eventy
+        introduction_description:
+            tab: Úvod  
+            label: Description 
+            type: text
+            default: Tail aliquip labore pig sirloin pork prosciutto landjaeger ham, cupim adipisicing eiusmod sunt. Strip steak sausage shank kielbasa fatback pork belly.
+        introduction_items:
+            tab: Úvod
+            label: Text 
+            titleFrom: title
+            prompt: Add new about item
+            type: repeater
+            form:
+                fields:
+                    title:
+                        label: Title
+                        type: text
+                        default: About
+                        span: storm
+                        cssClass: col-md-4
+                    description:
+                        label: Description
+                        type: textarea
+                        span: storm
+                        cssClass: col-md-4
+                    image:
+                        label: Obrázek
+                        type: mediafinder
+                        mode: image
+                        span: storm
+                        cssClass: col-md-4
+
+        

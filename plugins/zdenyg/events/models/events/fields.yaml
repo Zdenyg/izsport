@@ -1,0 +1,38 @@
+fields:
+    name:
+        label: Nadpis
+        span: auto
+        type: text
+    description:
+        label: Popis
+        size: ''
+        span: auto
+        type: textarea
+    image:
+        label: 'Náhledový obrázek'
+        mode: image
+        imageWidth: '80'
+        imageHeight: '80'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    gallery:
+        label: Galerie
+        mode: image
+        imageWidth: '80'
+        imageHeight: '80'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    categories:
+        label: Kategorie
+        nameFrom: category_title
+        descriptionFrom: description
+        span: auto
+        type: relation

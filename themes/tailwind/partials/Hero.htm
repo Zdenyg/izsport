@@ -1,0 +1,40 @@
+<div class="hero-wrapper">
+   <div class="hidden md:flex">      
+      <video class="hero-video" id="myVideo">
+         <source src="{{ "assets/dist/video/Krystof.mp4" | theme }}" type="video/mp4">
+         Your browser does not support the video tag.
+      </video>
+   </div>
+   <div id="hero">
+      <div class="hero-img">
+         <img src="{{ "assets/dist/images/Krajco.jpg" | theme }}" alt="">
+      </div>
+      <div id="hero-content" class="hero-content bg-primary md:flex md:flex-col p-10 mb-10 justify-center md:pl-24">
+         <h1 class="text-white text-3xl mb-5 md:max-w-min">{{ this.theme.hero_title }}</h1>
+         <h2 class="text-white text-2xl">{{ this.theme.hero_subtitle }}</h2>
+      </div>
+   </div>
+      
+   <button class="video-btn"><i class="fa-solid fa-play text-primary p-5" id="myBtn" onclick="myFunction()"aria-hidden="true"></i></button>
+
+</div>
+  <script>
+  var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+var hero = document.getElementById("hero");
+
+function myFunction() {
+   
+if (video.paused) {
+   video.play();
+      btn.classList.remove("fa-play");
+      btn.classList.toggle("fa-pause");
+      hero.style.opacity = 0;
+} else {
+   video.pause();
+      btn.classList.remove("fa-pause");
+      btn.classList.toggle("fa-play");
+      hero.style.opacity = "1";
+}
+}
+  </script>

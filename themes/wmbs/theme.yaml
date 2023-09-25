@@ -1,0 +1,12 @@
+name: BS
+description: 'Custom theme generated for http://127.0.0.1:8000/'
+author: 'Zdeněk Spisar'
+homepage: 'http://127.0.0.1:8000/'
+code: winter-cms
+mix:
+    theme-wmbs: winter.mix.js
+
+form:
+    fields:
+        googleanalytics_id:
+            label: 'Google Analytics ID'

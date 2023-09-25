@@ -1,0 +1,37 @@
+<!-- navbar -->
+<nav class="bg-gray-200 px-5 md:px-0">
+  <div class="container mx-auto">
+    <div class="navbar py-5">
+      <div class="flex md:justify-between items-center">
+        <div class="logo">
+          <a href="{{ 'index'| page }}"><img src="{{ this.theme.company_logo | media }}" alt="IZ sport Logo"></a>
+
+          </a>
+        </div>
+        <div class="hidden md:flex space-x-1 uppercase items-center">
+            <ul class="flex">
+               <li class="{% if this.page.id == 'home' %}text-primary{% endif %}"><a href="{{ 'home'|page }}">úvod</a></li>
+               <li class="{% if this.page.id == 'eventy' %}text-primary{% endif %}"><a href="{{ 'eventy'|page }}">eventy</a></li>
+               <li class="{% if this.page.id == 'provozovny' %}text-primary{% endif %}"><a href="{{ 'provozovny'|page }}">provozovny</a></li>
+               <li class="{% if this.page.id == 'kontakt' %}text-primary{% endif %}"><a href="{{ 'kontakt'|page }}">kontakt</a></li>  
+            </ul>
+        </div>
+      </div>
+      <div class="md:hidden absolute top-0 right-0 m-5">
+        <button class="mobile-menu-button">
+          <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mx-auto mobile-menu hidden uppercase pb-4">
+      <li class="my-4 list-none {% if this.page.id == 'home' %}text-primary{% endif %}"><a href="{{ 'home'|page }}">úvod</a></li>
+      <li class="my-4 list-none {% if this.page.id == 'eventy' %}text-primary{% endif %}"><a href="{{ 'eventy'|page }}">eventy</a></li>
+      <li class="my-4 list-none {% if this.page.id == 'provozovny' %}text-primary{% endif %}"><a href="{{ 'provozovny'|page }}">provozovny</a></li>
+      <li class="my-4 list-none {% if this.page.id == 'kontakt' %}text-primary{% endif %}"><a href="{{ 'kontakt'|page }}">kontakt</a></li>  
+  </div>
+</nav>
+

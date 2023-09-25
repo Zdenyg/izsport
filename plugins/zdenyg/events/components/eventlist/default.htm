@@ -1,0 +1,22 @@
+
+{% set events = __SELF__.eventlist %}
+
+
+<ul>
+   {% for event in events %}
+
+      {% if detailsPage %}
+    
+        <a href="{{ detailsPage | page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) } ) }}">
+        
+      {% endif %}       
+
+
+      <li>{{ event.name }}</li>
+      <img src="{{ event.image | resize(80, auto) }}" alt="">
+      </a>
+
+   {% endfor %}
+</ul>
+
+

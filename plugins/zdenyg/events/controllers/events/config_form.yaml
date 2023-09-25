@@ -1,0 +1,10 @@
+name: Events
+form: $/zdenyg/events/models/events/fields.yaml
+modelClass: Zdenyg\Events\Models\Events
+defaultRedirect: zdenyg/events/events
+create:
+    redirect: 'zdenyg/events/events/update/:id'
+    redirectClose: zdenyg/events/events
+update:
+    redirect: zdenyg/events/events
+    redirectClose: zdenyg/events/events

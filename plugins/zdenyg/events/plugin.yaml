@@ -1,0 +1,16 @@
+plugin:
+    name: 'zdenyg.events::lang.plugin.name'
+    description: 'zdenyg.events::lang.plugin.description'
+    author: Zdenyg
+    icon: wn-icon-calendar-o
+    replaces: {  }
+navigation:
+    main-menu-item:
+        label: Eventy
+        url: zdenyg/events/events
+        icon: icon-calendar-o
+        sideMenu:
+            side-menu-item:
+                label: Kategorie
+                url: zdenyg/events/categories
+                icon: icon-sitemap

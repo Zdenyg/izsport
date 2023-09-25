@@ -1,0 +1,28 @@
+/**
+ * Custom CSS for theme goes here
+ */
+
+
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap');
+
+
+ * {
+   font-family: 'Montserrat', sans-serif;
+ }
+
+ html {
+   font-weight: 400;
+ }
+ .navbar {
+   font-weight: 400;
+   font-size: 1rem;
+ }
+
+
+.navbar li {
+   @apply list-none;
+}    
+
+.navbar li a {
+   @apply py-5 px-3 hover:text-primary
+}
