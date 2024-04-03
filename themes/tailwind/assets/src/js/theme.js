@@ -1,10 +1,15 @@
 /*
  * Application
  */
-
+require("fslightbox"); 
 import "./navbar.js";
-import "./modal.js";
+// import "./modal.js";
 // import "./hero.js";
+
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 (function($) {
     "use strict";

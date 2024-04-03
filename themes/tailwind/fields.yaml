@@ -7,13 +7,23 @@ tabs:
             type: section
             comment: Zde nastavte úvodní informace...
         website_name:
-            stretch: false
             tab: Úvod
             label: Název webu
             type: text
-            default: 
             span: storm
             cssClass: col-md-4
+        email:
+            tab: Úvod
+            label: Email
+            type: email
+            span: storm
+            cssClass: col-md-4    
+        phone:
+            tab: Úvod
+            label: Telefon
+            type: text
+            span: storm
+            cssClass: col-md-4              
         website_description:
             tab: Úvod
             label: Popis webové stránky
@@ -26,11 +36,18 @@ tabs:
             label: Logo 
             type: mediafinder
             mode: image
-            imageWidth: 100
-            imageHeight: 70
+            imageWidth: 80
+            imageHeight: 50
             filetypes: svg  
             span: storm
-            cssClass: col-md-4  
+            cssClass: col-md-4 
+        adress:
+            tab: Úvod
+            label: Adresa
+            type: richeditor
+            toolbarButtons: formatUL
+            span: storm
+            cssClass: col-md-4     
         details_section_2:
             tab: Úvod
             label: Texty v Hero sekci
@@ -87,4 +104,52 @@ tabs:
                         span: storm
                         cssClass: col-md-4
 
-        
+        parlors:
+            tab: Provozovny
+            label: Provozovny 
+            titleFrom: title
+            prompt: Přidat další provozovnu
+            type: repeater
+            form:
+                fields:
+                  parlor_name:
+                    tab: Provozovny
+                    label: Název provozovny
+                    type: text
+                    span: storm
+                    cssClass: col-sm-4
+                  parlor_logo:
+                    tab: Provozovny
+                    label: Logo
+                    imageWidth: 70
+                    imageHeight: 70
+                    type: mediafinder
+                    mode: image
+                    span: storm
+                    cssClass: col-sm-3
+                  parlor_email:  
+                    tab: Provozovny
+                    label: Email
+                    type: text
+                    span: storm
+                    cssClass: col-sm-4
+                  parlor_tel:  
+                    tab: Provozovny
+                    label: Telefon
+                    type: text
+                    span: storm
+                    cssClass: col-sm-4
+                  parlor_adress:  
+                    tab: Provozovny
+                    label: Adresa
+                    type: richeditor
+                    toolbarButtons: bold|formatUL
+                    span: storm
+                    cssClass: col-sm-6  
+                  parlor_time:
+                    label: Otevírací doba
+                    tab: Provozovny
+                    type: richeditor
+                    toolbarButtons: bold|superscript|formatUL
+                    span: storm
+                    cssClass: col-sm-6 

@@ -2,5 +2,44 @@ title = "test"
 url = "/test"
 layout = "default"
 is_hidden = 0
+
+[builderList]
+modelClass = "Zdenyg\Events\Models\Events"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "event"
+detailsKeyColumn = "name"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
 ==
-{% partial 'Hero' %}
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+<div class="container mx-auto">
+   {% for record in records %}
+
+   <div class="card flex even:justify-end" data-aos="flip-left">
+         <div class="bg-secondary rounded-xl shadow-xl flex items-start m-24 p-12" >
+            <img src="{{ record.image.path | resize(130,130, {'mode': 'crop'}) }}" class="rounded-2xl" alt="">
+            <div class="content flex-auto ml-8">
+               <h2 class="text-white text-xl font-bold mb-3">{{ record.name }}</h2>
+               <p class="mb-6 text-white">{{ html_limit(record.description, 50, '...') }}</p>
+               {% if detailsPage %}
+               <button class="bg-primary py-2 text-white rounded hover:bg-red-800">
+                  <a href="{{ detailsPage | page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) } ) }}" class="py-2 px-4 leading-5">více info</a>
+               </button>
+               {% endif %}        
+            </div>   
+            
+         </div>
+   </div>
+   
+   {% endfor %}
+</div>
+

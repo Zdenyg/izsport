@@ -2,6 +2,7 @@ fields:
     category_title:
         label: 'Category title'
         span: auto
+        required: 1
         type: text
     slug:
         label: Slug

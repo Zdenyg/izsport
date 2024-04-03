@@ -3,6 +3,34 @@ url = "/kontakt"
 layout = "default"
 is_hidden = 0
 ==
-<div class="container mx-auto">
-    <h1 class="text-4xl">Kontakt</h1>
+{% partial 'provozovny' %}
+
+<div class="footer-bg bg-gray-300 h-screen noisy">
+<div class="container mx-auto pt-8">
+    <h1 class="text-4xl text-secondary font-bold mb-16">Kontakt</h1>
+
+         <div class="shadow-2xl p-12 rounded-2xl bg-white">
+            <p class="font-bold text-secondary text-xl mb-8 lg:text-center">{{ this.theme.website_name }}</p>
+            <div class=" md:flex md:flex-row md:justify-between lg:justify-around">
+            <div class="">
+               <i class="fa-solid fa-location-dot text-base text-primary"></i><span class="text-secondary mb-3 ml-4">Adresa:</span>
+               <p>{{ this.theme.adress | raw }}</p>
+            </div>
+            <div class="mt-12 md:mt-0">
+               <div class="flex">
+                  <i class="fa-solid fa-phone text-base text-primary"></i>
+                  <p class="ml-5">{{ this.theme.phone }}</p>
+               </div>
+               <div class="flex">   
+                  <i class="fa-solid fa-envelope text-base text-primary"></i>
+                  <a href="mailto: {{ html_email(this.theme.email) | raw }}" class="ml-4 hover:text-primary">{{ this.theme.email }}</a>
+               </div>
+               <img src="{{ this.theme.company_logo | media }}" class="mt-4 w-40" alt="IZ sport Logo">
+            </div>
+            </div>
+
+         </div>
+
+   </div>
+</div>
 </div>

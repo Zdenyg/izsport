@@ -4,7 +4,7 @@
     <div class="navbar py-5">
       <div class="flex md:justify-between items-center">
         <div class="logo">
-          <a href="{{ 'index'| page }}"><img src="{{ this.theme.company_logo | media }}" alt="IZ sport Logo"></a>
+          <a href="{{ 'home'| page }}"><img src="{{ this.theme.company_logo | media }}" alt="IZ sport Logo"></a>
 
           </a>
         </div>
@@ -12,7 +12,6 @@
             <ul class="flex">
                <li class="{% if this.page.id == 'home' %}text-primary{% endif %}"><a href="{{ 'home'|page }}">úvod</a></li>
                <li class="{% if this.page.id == 'eventy' %}text-primary{% endif %}"><a href="{{ 'eventy'|page }}">eventy</a></li>
-               <li class="{% if this.page.id == 'provozovny' %}text-primary{% endif %}"><a href="{{ 'provozovny'|page }}">provozovny</a></li>
                <li class="{% if this.page.id == 'kontakt' %}text-primary{% endif %}"><a href="{{ 'kontakt'|page }}">kontakt</a></li>  
             </ul>
         </div>
@@ -30,8 +29,6 @@
   <div class="container mx-auto mobile-menu hidden uppercase pb-4">
       <li class="my-4 list-none {% if this.page.id == 'home' %}text-primary{% endif %}"><a href="{{ 'home'|page }}">úvod</a></li>
       <li class="my-4 list-none {% if this.page.id == 'eventy' %}text-primary{% endif %}"><a href="{{ 'eventy'|page }}">eventy</a></li>
-      <li class="my-4 list-none {% if this.page.id == 'provozovny' %}text-primary{% endif %}"><a href="{{ 'provozovny'|page }}">provozovny</a></li>
       <li class="my-4 list-none {% if this.page.id == 'kontakt' %}text-primary{% endif %}"><a href="{{ 'kontakt'|page }}">kontakt</a></li>  
   </div>
 </nav>
-

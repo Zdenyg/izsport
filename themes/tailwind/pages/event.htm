@@ -1,0 +1,56 @@
+title = "Event"
+url = "/event/:id?"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Zdenyg\Events\Models\Events"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "name"
+notFoundMessage = "Record not found"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+<div class="container mx-auto py-16">
+
+    <h2 class="text-primary text-2xl mb-6">{{ record.name }}</h2>
+        
+    <div class="mb-12">{{ record.description | raw }}</div>
+
+{% if record %}
+
+    <h3 class="text-primary text-xl mb-6">Galerie</h3>    
+      <div class="grid grid-cols-4">
+    {% for image in record.gallery %}
+         <a href="{{ image.path }}" data-fslightbox="gallery"> 
+            <img src="{{ image.thumb(220, 150, {'mode':'crop'}) }}" alt="">
+         </a> 
+      {% endfor %}      
+      </div>
+    {% if record.gallery_link is empty%}  
+
+      {% else %}
+
+         <a href="{{ record.gallery_link }}" class="text-primary hover:text-red-800" target="_blank">odkaz na galerii</a>
+
+    {% endif %}
+
+  
+   {# <p class="text-primary">Kategorie: </p> #}
+
+   {# {% for category in record.categories %}
+
+     <a href="/kategorie/{{ category.slug }}"> {{ category.category_title }}</a><br>
+
+   {% endfor %} #}
+
+
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}
+
+
+</div>

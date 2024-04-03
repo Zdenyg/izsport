@@ -9,8 +9,8 @@ is_hidden = 0
    {% partial "partners" %}
 
 
-<div class="container mx-auto px-5 md:px-0">
-   <h1 class="text-center text-4xl font-bold mb-3 text-secondary">{{ this.theme.introduction_title }}</h1>
+<div class="container mx-auto">
+   <h1 class="text-center text-4xl font-bold pt-8 my-4 text-secondary">{{ this.theme.introduction_title }}</h1>
    <h3 class="text-center text-lg mb-5">{{ this.theme.introduction_description }}</h3>
 
    <div class="w-full md:flex">
@@ -18,14 +18,19 @@ is_hidden = 0
          {% for fields in this.theme.introduction_items %}
 
       <div class="px-8 my-8">
-         <p class="text-center text-primary font-bold">{{ fields.title }}</p>
-            <p class="text-center">{{ fields.description }}</p>
-         <img src="{{ fields.image | media }}" class="w-full mt-5" alt="">   
+         <h2 class="text-primary text-2xl">{{ fields.title }}</h2>
+         <p>{{ fields.description }}</p>
+         <img src="{{ fields.image | media }}" class="mt-5" alt="">   
       </div>
          
          {% endfor %}                        
          
    </div>
+
+   <button class="bg-primary py-2 px-4 mx-auto text-white block mb-16 rounded hover:bg-red-800">
+      <a href="{{ 'eventy'|page }}">Galerie eventů</a>
+   </button>
+
 </div>
 
 

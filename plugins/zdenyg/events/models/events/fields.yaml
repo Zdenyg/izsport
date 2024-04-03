@@ -4,10 +4,10 @@ fields:
         span: auto
         type: text
     description:
-        label: Popis
+        label: 'Popis akce'
         size: ''
         span: auto
-        type: textarea
+        type: richeditor
     image:
         label: 'Náhledový obrázek'
         mode: image
@@ -36,3 +36,7 @@ fields:
         descriptionFrom: description
         span: auto
         type: relation
+    gallery_link:
+        label: 'Externí galerie'
+        span: auto
+        type: text

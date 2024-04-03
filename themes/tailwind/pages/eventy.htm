@@ -3,10 +3,41 @@ url = "/eventy"
 layout = "default"
 is_hidden = 0
 
-[eventlist]
-results = 1
-sortOrder = "latest"
+[builderList]
+modelClass = "Zdenyg\Events\Models\Events"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "event"
+detailsKeyColumn = "id"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
 ==
-<div class="container mx-auto">
-    <h1 class="text-4xl">Eventy</h1>
-</div>{% component 'eventlist' %}
+
+   <div class="bgimage"></div>
+   <div class="container mx-auto py-24">
+      <h2 class="text-6xl w-1/2 text-white mb-16">prohlédněte si galerii našich eventů...</h2>
+       
+      {% for record in records %}
+
+      <div class="card flex lg:even:justify-end" data-aos="zoom-in-up">
+            <div class="drop-shadow-xl hover:bg-secondary rounded-xl shadow-xl flex items-start m-8 lg:m-24 p-12" >
+               <img src="{{ record.image.path | resize(130,130, {'mode': 'crop'}) }}" class="rounded-2xl" alt="">
+               <div class="content flex-auto ml-8">
+                  <h2 class="text-white text-xl font-bold mb-3">{{ record.name }}</h2>
+                  <div class="mb-6 text-white">{{ html_limit(record.description | raw, 50, '...') }}</div>
+                  {% if detailsPage %}
+                  <button class="bg-primary py-2 text-white rounded hover:bg-red-800">
+                     <a href="{{ detailsPage | page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) } ) }}" class="py-2 px-4 leading-5">více info</a>
+                  </button>
+                  {% endif %}        
+               </div>   
+            </div>
+      </div>
+   
+   {% endfor %}
+   </div>
+
+
+

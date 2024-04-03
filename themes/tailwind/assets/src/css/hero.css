@@ -34,6 +34,14 @@
    position: relative;
    object-fit: cover;
 }
+#hero {
+   transition: opacity 1.3s linear;
+}
+#hero-content h1 {
+   line-height: 4rem;
+}
+
+
 .hero-img {
    width: 50%;
    height: 80vh;

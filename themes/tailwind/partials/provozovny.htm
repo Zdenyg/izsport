@@ -1,0 +1,29 @@
+<div class="container mx-auto py-24 bg-gray-300 noisy">
+    <h1 class="text-4xl text-secondary font-bold mb-16">Provozovny</h1>
+
+
+   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 z-10">
+      {% for fields in this.theme.parlors %}
+      <div class="card flex flex-col bg-white text-secondary shadow-2xl p-8 rounded-2xl">      
+         <img src="{{ fields.parlor_logo | media | resize(150, 80) }}" class="self-center" alt="">   
+         <div class="card-body">
+            <h3 class="text-xl font-bold text-secondary pt-8 pb-4">{{ fields.parlor_name }}</h3>
+            {{ fields.parlor_adress | raw }}
+            <hr>  
+            <p class="text-lg font-bold text-secondary pt-2 pb-2">Otevírací doba</p>
+            {{ fields.parlor_time | raw }}
+            <hr>
+            <div class="card-icons flex pt-4">
+               <i class="fa-solid fa-phone text-base text-secondary"></i>
+               <p class="ml-5">{{ fields.parlor_tel }}</p>
+            </div>
+            <div class="card-icons flex mt-3">   
+               <i class="fa-solid fa-envelope text-base text-secondary"></i>
+               <a href="mailto: {{ html_email(fields.parlor_email) | raw }}" class="ml-4 hover:text-primary">{{ fields.parlor_email }}</a>
+
+            </div>
+         </div>
+      </div>
+      {% endfor %}    
+   </div>
+</div>
